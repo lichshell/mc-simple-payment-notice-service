@@ -1,0 +1,25 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: payment-notes
+  kafka:
+    # EXTERNAL listeners advertised by the compose file (app runs on the host)
+    bootstrap-servers: localhost:19092,localhost:29092,localhost:39092
+
+app:
+  schema-registry-url: http://localhost:8081
+  topics:
+    payment-plain-v1: src-payment-plain-v1
+    payment-json-v1: src-payment-json-v1
+  consumers:
+    payment-plain-cg-v1: payment-plain-cg-v1
+    payment-json-cg-v1: payment-json-cg-v1
+
+logging:
+  level:
+    root: INFO
+    org.apache.kafka.clients.consumer.ConsumerConfig: WARN
+    org.apache.kafka.clients.producer.ProducerConfig: WARN
+    io.confluent.kafka.serializers: INFO
