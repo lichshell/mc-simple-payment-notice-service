@@ -1,17 +1,16 @@
-# mc-simple-payment-notice-service
+# &#9842; mc-simple-payment-notice-service 
 A simple payment notice through kafka schema
-## Setup
+## &#1422; Setup
     Docker Instances
         + cp kafka image 
         + cp kafka schema regisrtry 
         + kafka ui
 
-## Build
+## &#1422; Build
         + maven build
 
-## Test
-
-    ```script
+## &#1422; Test
+    
     # String/Plain message
     curl -vX POST "localhost:8090/api/payments/string?key=acct-001" \
     -H "Content-Type: text/plain" -d "Welcome to kafka schema registry ...
@@ -20,4 +19,4 @@ A simple payment notice through kafka schema
     curl -X POST localhost:8090/api/payments/json-schema \
     -H "Content-Type: application/json" \
     -d '{"name":"alice","alias":"bob","amount":125.50,"currency":"USD","note":"Mark Das"}'
-    ```
+    
