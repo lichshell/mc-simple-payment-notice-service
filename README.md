@@ -19,4 +19,5 @@ A simple payment notice through kafka schema
     curl -X POST localhost:8090/api/payments/json-schema \
     -H "Content-Type: application/json" \
     -d '{"name":"alice","alias":"bob","amount":125.50,"currency":"USD","note":"Mark Das"}'
-    
+
+## &#1422; Status : In-Progress
